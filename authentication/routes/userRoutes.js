@@ -9,15 +9,7 @@ router.get("/public", (req, res) => {
   res.json({ message: "This is a public route any one can access" });
 });
 
-// Protected route (admin and user)
+// Protected route only for admin
 router.get("/protected", authMiddleware, userController.getProtectedData);
-
-// Admin-only protected route
-router.get(
-  "/admin",
-  authMiddleware,
-  roleMiddleware("admin"),
-  userController.getProtectedData
-);
 
 module.exports = router;

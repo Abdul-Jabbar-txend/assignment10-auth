@@ -24,8 +24,6 @@ connectDB();
 
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
-app.use("/api/public", userRoutes);
-app.use("/api/protected", userRoutes);
 
 // Server listening on port
 const PORT = process.env.PORT || 5000;
